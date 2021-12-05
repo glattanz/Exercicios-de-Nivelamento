@@ -1,0 +1,43 @@
+/*Nome: Gabrielle lattanzi
+Professor: Sergio Netto
+Exercício: - Faça um programa que crie preencha com valores aleatórios entre 0 e 100 e apresente uma
+matriz 10x5 de inteiros. Crie um vetor que some e apresente o total de cada linha e um segundo
+vetor com a média de cada linha.
+
+*/
+
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+//DANDO ERRO NA CONTAGEM DAS LINHAS
+int main ()
+{
+	int m[10][5], vl[10], ml[10], l, c, i;
+	
+	srand(time(NULL));
+	
+	for(l=0; l<10; l++)
+	{
+		for(c=0; c<5; c++)
+		{
+			m[l][c] = rand() % 100;
+			
+			printf("%d\t", m[l][c]);		
+		}
+		
+		vl[l]+=m[l][c];
+		
+		ml[l]+=m[l][c];
+		
+		printf("\n");
+	}
+	
+	for(l=0; l<10; l++)
+	{
+		printf("\nTotal linha %d: %d", l, vl[l]);
+		
+		printf("\nMédia da linha %d: %f", l, ml[l]);
+	}
+		
+}
