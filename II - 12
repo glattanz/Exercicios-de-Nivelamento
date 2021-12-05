@@ -1,0 +1,42 @@
+/*Nome: Gabrielle lattanzi
+Professor: Sergio Netto
+Exercício: – Faça um programa que crie preencha e apresente dois vetores de 5 posições de inteiros, em 
+seguida concatene os dois vetores um a um em um terceiro vetor de 10 posições.
+
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main()
+{
+	int i,v1[5], v2[5],v3[10];
+	
+	for(i=0;i<5;i++)
+	{
+		v1[i]=rand() % 100;
+		printf("Vetor 1 [%d]:", i);
+		printf("%d\n", v1[i]);
+		v3[i]=v1[i];
+	}
+	
+	printf("\n====================================\n");
+	
+	for(i=0;i<5;i++)
+	{		
+		v2[i]=rand() % 100;
+		printf("Vetor 2 [%d]:", i);
+		printf("%d\n", v2[i]);
+		v3[5+i]=v2[i];
+	}
+	
+	printf("\n====================================\n");
+	
+	for(i=0;i<10;i++)
+	{		
+		printf("Vetor 3 [%d]:", i);
+		printf("%d\n", v3[i]);
+	}
+	
+}
