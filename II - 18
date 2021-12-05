@@ -1,0 +1,43 @@
+/*Nome: Gabrielle lattanzi
+Professor: Sergio Netto
+Exercício: Faça um programa que crie preencha com valores aleatórios entre 0 e 100 e apresente uma 
+matriz 10x5 de inteiros. Crie um vetor que some e apresente o total de cada coluna e um segundo 
+vetor com a média de cada coluna.
+
+*/
+
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+int main ()
+{
+	int m[10][5], vc[5], l, c, i;
+	float mc[10];
+	
+	srand(time(NULL));
+	
+	for(l=0; l<10; l++)
+	{
+		for(c=0; c<5; c++)
+		{
+			m[l][c] = rand() % 100;
+			
+			vc[c] += m[l][c];
+			
+			mc[c] += m[l][c];
+			
+			printf("%d\t", m[l][c]);		
+		}
+		
+		printf("\n");
+	}
+	
+	for(c=0; c<5; c++)
+	{
+		printf("\nTotal coluna %d: %d", c, vc[c]);	
+		
+		printf("\nMédia da coluna %d: %.2f", c, mc[c]/5);
+	}
+		
+}
