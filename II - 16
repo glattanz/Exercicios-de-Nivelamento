@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+//INCOMPLETO
+int main()
+{
+	int m2[5][5], m1[5][5], l, c, count, ale;
+	
+	srand(time(NULL));
+	
+	printf("===================MATRIZ 1===================\n");
+	//Andar pelas linhas
+	for(l=0; l<5; l++)
+	{
+		//Andar pelas colunas
+		for(c=0; c<5; c++)
+		{
+			ale = 11 + rand() % 20;
+			
+			if(ale<20)
+			{
+				m2[l][c] = ale + 5;
+				
+				c++;
+			}
+			else
+			{
+				m1[l][c] = ale;
+			}
+			
+			printf("%d\t", m1[l][c]);
+		}
+		
+		printf("\n");
+	}
+
+	
+	printf("===================MATRIZ 2===================\n");
+	for(l=0; l<5; l++)
+	{
+		//Andar pelas colunas
+		for(c=0; c<5; c++)
+		{
+			printf("%d\t", m2[l][c]);
+		}
+		
+		printf("\n");
+	}
+	
+	printf("\nForam modificados %d números", c);
+}
