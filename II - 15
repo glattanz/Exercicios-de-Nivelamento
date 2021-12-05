@@ -1,0 +1,32 @@
+/*Nome: Gabrielle lattanzi
+Professor: Sergio Netto
+Exercício: Faça um programa que crie preencha com valores aleatórios entre 10 e 30 e apresente uma
+matriz 5x5 de inteiros.
+
+*/
+
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+int main()
+{
+	int m1[5][5], l, c, cont, ale;
+	
+	srand(time(NULL));
+	
+	printf("===================MATRIZ===================\n");
+	//Andar pelas linhas
+	for(l=0; l<5; l++)
+	{
+		//Andar pelas colunas
+		for(c=0; c<5; c++)
+		{
+			m1[l][c] = 11 + rand() % 20;
+				
+			printf("%d\t", m1[l][c]);
+		}
+		
+		printf("\n");
+	}
+}
