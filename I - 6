@@ -1,0 +1,36 @@
+/*Nome: Gabrielle lattanzi
+Professor: Sergio Netto
+Exercício:  A prefeitura de Macaé abriu uma linha de crédito para os funcionários estatutários. O valor 
+máximo da prestação não poderá ultrapassar 30% do salário bruto. Fazer um programa que 
+permita entrar com o salário bruto e o valor da prestação, e informar se o empréstimo pode ou 
+não ser concedido.
+
+*/
+#include <stdio.h>
+#include <locale.h>
+
+int main()
+{
+	setlocale (LC_ALL,"portuguese");
+	
+	float s,p,a;
+	
+	s=p=a=0;
+	
+	printf("Informe seu salário:");
+	scanf("%f",&s);
+	
+	printf("Informe sua prestação:");
+	scanf("%f",&p);
+	
+	a=((30/100)*s);
+	
+	if(p>a)
+	{
+		printf("NÃO PODE");
+	}
+	else
+	{
+		printf("PODE");
+	}
+}
