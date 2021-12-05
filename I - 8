@@ -1,0 +1,84 @@
+/*Nome: Gabrielle lattanzi
+Professor: Sergio Netto
+Exercício: Escreva um programa que leia o número de habitantes de uma determinada cidade, o valor do 
+kwh, e para cada habitante gere aleatoriamente os seguintes dados: consumo do mês (0 - 500)e o 
+código do consumidor (1-Residencial, 2-Comercial, 3-Industrial). No final imprima o maior, o menor 
+e a média do consumo dos habitantes; e por fim o total do consumo de cada categoria de 
+consumidor.
+
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main()
+{
+	setlocale (LC_ALL,"portuguese");
+
+	int h, i, cod, c, maior, menor, totalc, total1, total2, total3;
+	float k, media;
+	
+	printf("Insira o número de habitantes:");
+	scanf("%d", &h);
+	
+	printf("Insira o valor do kw/h:");
+	scanf("%f", &k);
+	
+	for(i=0;i<=h;i++)
+	{
+		printf("\nHabitante %d", i);
+		
+		c=rand() % 501;
+		printf("\nConsumo: %d", c);
+		
+		totalc=c+totalc;
+		
+		if(i==0)
+		{
+	    	maior=c;
+	        menor=c;
+        }
+		if(c>maior)
+		{
+			maior=c;
+		}
+		else if(c<menor)
+		{
+			menor=c;
+		}
+		
+		
+		cod=1+(rand() % 3);
+		printf("\nCódigo: %d", cod);
+			if(cod==1)
+			{
+				printf("\n1 - Residencial");
+				total1=total1+c;
+			}
+			else 
+			if(cod==2)
+			{
+				printf("\n2 - Comercial");
+				total2=total2+c;
+			}
+			else 
+			{
+				printf("\n3 - Industrial");
+				total3=total3+c;
+			}
+			
+		printf("\n");	
+	}
+	
+	media=totalc/h;
+		
+	printf("\nMédia de consumo geral: %.2f", media);
+	
+	printf("\nTotal de consumo residencial: %d", total1);
+	
+	printf("\nTotal de consumo comercial: %d", total2);
+	
+	printf("\nTotal de consumo industrial: %d", total3);
+	
+}
