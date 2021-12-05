@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+int main()
+{
+	int m[5][5], l1, c1, l2, c2, c, ale;
+	
+	srand(time(NULL));
+	
+	printf("===================MATRIZ 1===================\n");
+	//Andar pelas linhas
+	for(l1=0; l1<5; l1++)
+	{
+		//Andar pelas colunas
+		for(c1=0; c1<5; c1++)
+		{
+			ale = 11 + rand() % 20;
+			
+			if(ale<20)
+			{
+				m[l1][c1] = ale;
+				
+				m[l2][c2] = ale + 5;
+				
+				c++;
+			}
+			
+			
+			printf("%d\t", m[l1][c1]);
+		}
+		
+		printf("\n");
+	}
+	
+	l2=c2=0;
+	
+	printf("===================MATRIZ 2===================\n");
+	for(l2=0; l2<5; l2++)
+	{
+		//Andar pelas colunas
+		for(c2=0; c2<5; c2++)
+		{
+			printf("%d\t", m[l2][c2]);
+		}
+		
+		printf("\n");
+	}
+	
+	printf("Foram modificados %d números", c);
+}
