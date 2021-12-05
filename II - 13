@@ -1,0 +1,65 @@
+/*Nome: Gabrielle lattanzi
+Professor: Sergio Netto
+Exercício: – Dado o programa do exercício 12 encontre a apresente o maior e o menor elemento
+indicando seu índice
+*/
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <time.h>
+
+int main()
+{
+	srand(time(NULL));
+	
+	int i,imaior,imenor,maior,menor,v1[5], v2[5],v3[10];
+	
+	menor=100;
+	
+	for(i=0;i<5;i++)
+	{
+		v1[i]=rand() % 100;
+		printf("Vetor 1 [%d]:", i);
+		printf("%d\n", v1[i]);
+		v3[i]=v1[i];
+	
+	}
+	
+	printf("\n====================================\n");
+	
+	for(i=0;i<5;i++)
+	{		
+		v2[i]=rand() % 100;
+		printf("Vetor 2 [%d]:", i);
+		printf("%d\n", v2[i]);
+		v3[5+i]=v2[i];
+	}
+	
+	printf("\n====================================\n");
+	
+	for(i=0;i<10;i++)
+	{		
+		printf("Vetor 3 [%d]:", i);
+		printf("%d\n", v3[i]);
+		
+		if(v3[i]>maior)
+		{
+			maior=v3[i];
+			imaior=i;
+		}
+		
+			
+		if(v3[i]<menor)
+		{
+			menor=v3[i];
+			imenor=i;
+		}
+		
+	}
+	
+	printf("\nMaior: [%d]=%d", imaior,maior);
+	printf("\nMenor: [%d]=%d", imenor,menor);
+	
+}
