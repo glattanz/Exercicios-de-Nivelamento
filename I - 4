@@ -1,0 +1,36 @@
+/*Nome: Gabrielle lattanzi
+Professor: Sergio Netto
+Exercício:  Faça um programa em C que gere com a função rand dois valores entre 0 e 100, transforme em 
+números com uma casa decimal e apresente estes números além da média entre eles, em seguida, 
+apresente a mensagem aprovado caso o valor seja superior ou igual a seis e reprovado caso 
+contrário.
+
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+
+{
+	int x,y;
+	float m;
+	
+	x=rand() % 100;
+	y=rand() % 100;
+	
+	m=(x+y)/2;
+	
+	printf("%d e %d", x,y);
+	
+	printf("\nMédia: %.2f", m);
+	
+	if (m>=6)
+		{
+			printf("\nAPROVADO");
+		}
+		else
+		{
+			printf("\nREPROVADO");
+		}
+}
