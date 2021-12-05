@@ -1,0 +1,54 @@
+/*Nome: Gabrielle lattanzi
+Professor: Sergio Netto
+Exercício:  Dada a matriz encontrada no exercício 15 some 5 a cada elemento com valor inferior a 20 e
+apresente a matriz alterada e quantos números foram modificados.
+
+*/
+
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+
+int main()
+{
+	int m[5][5], l, c, cont, ale;
+	
+	srand(time(NULL));
+	
+	printf("===================MATRIZ ORIGINAL===================\n");
+	//Andar pelas linhas
+		for(l=0; l<5; l++)
+	{
+		//Andar pelas colunas
+		for(c=0; c<5; c++)
+		{
+			m[l][c] = 11 + rand() % 20;
+				
+			printf("%d\t", m[l][c]);
+		}
+		
+		printf("\n");
+	}
+	
+	printf("===================MATRIZ MODIFICADA===================\n");
+	
+	for(l=0; l<5; l++)
+	{
+		//Andar pelas colunas
+		for(c=0; c<5; c++)
+		{
+			if(m[l][c]<20)
+			{
+				m[l][c] = m[l][c] + 5;
+				
+				cont++;
+			}
+			
+			printf("%d\t", m[l][c]);
+		}
+		
+		printf("\n");
+	}
+	
+	printf("\nForam modificados %d números", cont);
+}
