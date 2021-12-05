@@ -1,0 +1,35 @@
+/*Nome: Gabrielle lattanzi
+Professor: Sergio Netto
+Exercício: Utilizando o Vetor apresentado na questão 10 apresente o vetor na ordem inversa
+
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include<time.h>
+
+int main()
+{
+	srand(time(NULL));
+	
+	setlocale (LC_ALL,"portuguese");
+	
+	int v[10],i;
+	
+	for(i=0;i<11;i++)
+	{
+		v[i]=rand() % 10;
+		printf("Vetor: %d \tNúmero: %d", i, v[i]);
+		printf("\n");
+	}
+	
+	printf("\n-----Vetor invertido-----");
+	printf("\n");
+	
+	for(i=10;i>=0;i--)
+	{
+		printf("Vetor: %d \tNúmero: %d", i, v[i]);
+		printf("\n");
+	}
+}
