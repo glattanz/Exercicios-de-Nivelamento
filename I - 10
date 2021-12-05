@@ -1,0 +1,28 @@
+/*Nome: Gabrielle lattanzi
+Professor: Sergio Netto
+Exercício: Faça um programa em C que crie preencha e apresente um vetor de 10 posições de inteiros
+
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <time.h>
+
+int main()
+{
+	srand(time(NULL));
+	
+	setlocale (LC_ALL,"portuguese");
+	
+	int v[10],i;
+	
+	for(i=0;i<11;i++)
+	{
+		v[i]=rand() % 10;
+		printf("Vetor: %d \tNúmero: %d", i, v[i]);
+		printf("\n");
+	}
+	
+	
+}
